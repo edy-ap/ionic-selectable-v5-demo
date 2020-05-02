@@ -22,7 +22,9 @@
       itemValueField="id"
       itemTextField="port"
       (changed)="onChanged($event)"
+      [(ngModel)]="binding"
     ></ionic-selectable>
   </ion-item>
   <ion-button (click)="open()">Open Ionic Selectable</ion-button>
+  {{binding | json}}
 </ion-content>

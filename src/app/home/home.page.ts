@@ -15,6 +15,8 @@ export class HomePage {
     { id: 3, port: 'Veracruz', country: { country: 'Mexico' } }
   ];
 
+  binding;
+
   constructor() {}
 
   onChanged(event: CustomEvent) {
