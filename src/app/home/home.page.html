@@ -13,13 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
-    <ion-item>
-      <ion-label>Ports</ion-label>
-      <ionic-selectable
-        id="sel1"
-        [items]="items"
-        itemValueField="id"
-        itemTextField="port"
-      ></ionic-selectable>
-    </ion-item>
+  <ion-item>
+    <ion-label>Ports</ion-label>
+    <ionic-selectable
+      #ionicSelectable
+      id="sel1"
+      [items]="items"
+      itemValueField="id"
+      itemTextField="port"
+      (changed)="onChanged($event)"
+    ></ionic-selectable>
+  </ion-item>
+  <ion-button (click)="open()">Open Ionic Selectable</ion-button>
 </ion-content>

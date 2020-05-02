@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonicSelectable } from 'test-isa';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  @ViewChild('ionicSelectable', { static: false }) ionicSelectable: IonicSelectable;
 
   items = [
     { id: 1, port: 'Salina Cruz', country: { country: 'Mexico' } },
@@ -14,5 +16,13 @@ export class HomePage {
   ];
 
   constructor() {}
+
+  onChanged(event: CustomEvent) {
+    console.log(event);
+  }
+
+  open() {
+    this.ionicSelectable.open();
+  }
 
 }
